@@ -1,33 +1,23 @@
 <template>
   <el-row class="tac">
     <el-col :span="24">
-      <el-menu @close="handleClose" @open="handleOpen" active-text-color="#ffd04b" background-color="#545c64"
-               class="el-menu-vertical-demo"
-               default-active="2"
-               router text-color="#fff" unique-opened>
-        <el-submenu index="1">
-          <template slot="title">
-            <i class="el-icon-location"></i>
-            <span>导航一</span>
-          </template>
-          <el-menu-item-group>
-            <el-menu-item index="1-1">选项1</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-            <el-menu-item index="1-3">选项3</el-menu-item>
-            <el-menu-item index="1-4">选项4</el-menu-item>
-          </el-menu-item-group>
-        </el-submenu>
+      <el-menu
+        @close="handleClose"
+        @open="handleOpen"
+        active-text-color="#ffd04b"
+        background-color="#545c64"
+        class="el-menu-vertical-demo"
+        router
+        text-color="#fff"
+        unique-opened>
 
-        <el-submenu index="2">
+        <el-submenu :index="item.id" :key="item.id" v-for="item in menu">
           <template slot="title">
-            <i class="el-icon-location"></i>
-            <span>导航二</span>
+            <span v-text="item.name"></span>
           </template>
-          <el-menu-item-group>
-            <el-menu-item index="2-1">选项1</el-menu-item>
-            <el-menu-item index="2-2">选项2</el-menu-item>
-            <el-menu-item index="2-3">选项3</el-menu-item>
-            <el-menu-item index="2-4">选项4</el-menu-item>
+          <el-menu-item-group :key="sub.componentName" class="over-hide" v-for="sub in item.sub">
+            <el-menu-item :index="sub.componentName" v-text="sub.name">
+            </el-menu-item>
           </el-menu-item-group>
         </el-submenu>
 
@@ -36,8 +26,20 @@
   </el-row>
 </template>
 
+<style scoped>
+  .over-hide {
+    overflow: hidden;
+  }
+</style>
+
 <script>
+import menu from '@/config/menu-config'
 export default {
+  data () {
+    return {
+      menu: menu
+    }
+  },
   methods: {
     handleOpen (key, keyPath) {
       console.log(key, keyPath)
