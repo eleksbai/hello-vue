@@ -4,7 +4,9 @@
     <el-container>
       <el-header>头部</el-header>
       <el-container>
-        <el-aside width="200px">侧边栏</el-aside>
+        <el-aside width="200px">
+          <navmenu></navmenu>
+        </el-aside>
         <el-main>主要内容区</el-main>
       </el-container>
     </el-container>
@@ -13,9 +15,12 @@
 </template>
 
 <script>
-
+import NavMenu from '@/components/NavMenu'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'navmenu': NavMenu
+  }
 }
 
 </script>
