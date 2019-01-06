@@ -4,7 +4,7 @@
       <el-menu @close="handleClose" @open="handleOpen" active-text-color="#ffd04b" background-color="#545c64"
                class="el-menu-vertical-demo"
                default-active="2"
-               text-color="#fff">
+               router text-color="#fff" unique-opened>
         <el-submenu index="1">
           <template slot="title">
             <i class="el-icon-location"></i>
