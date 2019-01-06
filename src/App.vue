@@ -2,7 +2,9 @@
   <div id="app">
 
     <el-container>
-      <el-header>头部</el-header>
+      <el-header class="header">
+        <vheader/>
+      </el-header>
       <el-container>
         <el-aside width="200px">
           <navmenu></navmenu>
@@ -16,15 +18,22 @@
 
 <script>
 import NavMenu from '@/components/NavMenu'
+import Header from '@/components/Header'
+
 export default {
   name: 'App',
   components: {
-    'navmenu': NavMenu
+    'navmenu': NavMenu,
+    'vheader': Header
   }
 }
 
 </script>
 
 <style>
-
+  .header {
+    background-color: #409EFF;
+    color: #fff;
+    line-height: 60px;
+  }
 </style>
