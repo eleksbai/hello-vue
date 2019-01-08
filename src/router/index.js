@@ -28,4 +28,16 @@ routes.push({
   component: () => import(`@/components/Home`)
 })
 
+routes.push({
+  path: `/t1`,
+  name: 'T1',
+  component: () => import(`@/components/T1`)
+})
+
+routes.push({
+  path: `/t2`,
+  name: 'T2',
+  component: () => import(`@/components/T2`)
+})
+
 export default new Router({ routes })
