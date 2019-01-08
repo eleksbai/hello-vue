@@ -16,4 +16,16 @@ menus.forEach((item) => {
   })
 })
 
+routes.push({
+  path: `/login`,
+  name: 'Login',
+  component: () => import(`@/components/Login`)
+})
+
+routes.push({
+  path: `/`,
+  name: 'Home',
+  component: () => import(`@/components/Home`)
+})
+
 export default new Router({ routes })
