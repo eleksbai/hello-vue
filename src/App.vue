@@ -2,7 +2,7 @@
   <div id="app">
 
     <div v-if="this.$store.state.token === ''">
-      <vlogin></vlogin>
+      <router-view></router-view>
 
     </div>
 
@@ -31,14 +31,13 @@
 <script>
 import NavMenu from '@/components/NavMenu'
 import Header from '@/components/Header'
-import Login from '@/components/Login'
 
 export default {
   name: 'App',
   components: {
     'vnavmenu': NavMenu,
-    'vheader': Header,
-    'vlogin': Login
+    'vheader': Header
+
   },
   data: function () {
     return {
@@ -56,9 +55,10 @@ export default {
 <style lang="css" scoped>
   /*!*@import "src/assets/sass/abstracts/abstracts";*! */
   /*@import "src/assets/css/dashboard.css";*/
-  .header {
-    background-color: #409EFF;
-    color: #fff;
-    line-height: 60px;
-  }
+  /*.header {*/
+    /*background-color: #409EFF;*/
+    /*color: #fff;*/
+    /*line-height: 60px;*/
+  /*}*/
+
 </style>
