@@ -3,12 +3,15 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import Vuex from 'vuex'
-// import 'bootstrap/dist/css/bootstrap.css'
-// import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'normalize.css'
+
+import '@/assets/css/dashboard.css'
+
 import 'vue-awesome/icons'
-// import BootstrapVue from 'bootstrap-vue'
+import BootstrapVue from 'bootstrap-vue'
 import Icon from 'vue-awesome/components/Icon'
 
 import App from './App'
@@ -17,7 +20,7 @@ import router from './router'
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
-// Vue.use(BootstrapVue)
+Vue.use(BootstrapVue)
 Vue.use(Vuex)
 Vue.component('icon', Icon)
 
