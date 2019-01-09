@@ -43,7 +43,7 @@ const store = new Vuex.Store({
       state.isLogin = true
     }
   },
-  plugins: [new VuexPersistence().plugin]
+  plugins: [new VuexPersistence({storage: window.sessionStorage}).plugin]
 })
 
 router.beforeEach((to, from, next) => {
