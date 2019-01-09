@@ -26,7 +26,7 @@ export default {
   // },
   methods: {
     user_login () {
-      this.$store.commit('login')
+      this.$store.commit('login', '666')
       this.$store.commit('increment')
 
       this.$router.push({path: '/'})

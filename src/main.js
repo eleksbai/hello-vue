@@ -33,14 +33,19 @@ VueCookies.set('hover-time', '1s')
 const store = new Vuex.Store({
   state: {
     count: 0,
-    isLogin: false
+    isLogin: false,
+    token: ''
   },
   mutations: {
     increment (state) {
       state.count++
     },
-    login (state) {
+    login (state, token) {
       state.isLogin = true
+      state.token = token
+    },
+    logout (state) {
+      state.token = ''
     }
   },
   plugins: [new VuexPersistence({storage: window.sessionStorage}).plugin]
@@ -48,7 +53,7 @@ const store = new Vuex.Store({
 
 router.beforeEach((to, from, next) => {
   if (to.path !== '/login') {
-    if (!store.state.isLogin) { // 通过vuex state获取当前的token是否存在
+    if (store.state.token === '') { // 通过vuex state获取当前的token是否存在
       next({
         path: 'login',
         query: {redirect: to.fullPath} // 将跳转的路由path作为参数，登录成功后跳转到该路由
