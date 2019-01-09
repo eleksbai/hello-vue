@@ -4,10 +4,11 @@
       <ul class="nav flex-column">
 
         <li :key="item.id" class="nav-item" v-for="item in menu">
-          <a :href="item.link" class="nav-link">
+
+          <b-link :href="item.link" class="nav-link">
             <icon :name="item.icon"></icon>
             <span v-text="item.name"></span>
-          </a>
+          </b-link>
         </li>
 
       </ul>

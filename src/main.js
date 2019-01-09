@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import Vuex from 'vuex'
+import VuexPersistence from 'vuex-persist'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -41,7 +42,8 @@ const store = new Vuex.Store({
     login (state) {
       state.isLogin = true
     }
-  }
+  },
+  plugins: [new VuexPersistence().plugin]
 })
 
 router.beforeEach((to, from, next) => {
