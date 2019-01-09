@@ -1,30 +1,18 @@
 <template>
-  <el-row class="tac">
-    <el-col :span="24">
-      <el-menu
-        @close="handleClose"
-        @open="handleOpen"
-        active-text-color="#ffd04b"
-        background-color="#545c64"
-        class="el-menu-vertical-demo"
-        router
-        text-color="#fff"
-        unique-opened>
+  <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+      <ul class="nav flex-column">
 
-        <el-submenu :index="item.id" :key="item.id" v-for="item in menu">
-          <template slot="title">
+        <li :key="item.id" class="nav-item" v-for="item in menu">
+          <a :href="item.link" class="nav-link">
             <icon :name="item.icon"></icon>
             <span v-text="item.name"></span>
-          </template>
-          <el-menu-item-group :key="sub.componentName" class="over-hide" v-for="sub in item.sub">
-            <el-menu-item :index="sub.componentName" v-text="sub.name">
-            </el-menu-item>
-          </el-menu-item-group>
-        </el-submenu>
+          </a>
+        </li>
 
-      </el-menu>
-    </el-col>
-  </el-row>
+      </ul>
+    </div>
+  </nav>
 </template>
 
 <style scoped>

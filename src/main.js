@@ -13,7 +13,7 @@ import '@/assets/css/dashboard.css'
 import 'vue-awesome/icons'
 import BootstrapVue from 'bootstrap-vue'
 import Icon from 'vue-awesome/components/Icon'
-
+import VueCookies from 'vue-cookies'
 import App from './App'
 import router from './router'
 
@@ -23,6 +23,11 @@ Vue.use(ElementUI)
 Vue.use(BootstrapVue)
 Vue.use(Vuex)
 Vue.component('icon', Icon)
+
+Vue.use(VueCookies)
+VueCookies.config('7d')
+VueCookies.set('theme', 'default')
+VueCookies.set('hover-time', '1s')
 
 const store = new Vuex.Store({
   state: {
