@@ -1,20 +1,7 @@
 <template>
   <div id="app">
-
-    <div v-if="loginType === 'username'">
-      <label>Username</label>
-      <input placeholder="Enter your username">
-    </div>
-    <div v-else>
-      <label>Email</label>
-      <input placeholder="Enter your email address">
-    </div>
-    <div>
-      <button @click="toggleLoginType">Toggle login type</button>
-    </div>
-
-    <!--<router-view></router-view>-->
-    <el-container key="index" v-if="loginType === 'username'">
+    <el-container v-if="this.$store.state.isLogin">
+    <!--<el-container>-->
       <el-header class="header">
         <vheader/>
       </el-header>
@@ -28,7 +15,7 @@
       </el-container>
     </el-container>
 
-    <el-container key="login" v-else>
+    <el-container v-else>
       <vlogin></vlogin>
     </el-container>
 
@@ -49,16 +36,13 @@ export default {
   },
   data: function () {
     return {
-      is_login: false,
       loginType: 'username'
     }
   },
+  computed: {
+  },
   methods: {
-    toggleLoginType: function () {
-      this.loginType = this.loginType === 'username' ? 'email' : 'username'
-    }
   }
-
 }
 
 </script>

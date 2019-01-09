@@ -34,7 +34,6 @@ const store = new Vuex.Store({
       state.isLogin = true
     }
   }
-
 })
 
 router.beforeEach((to, from, next) => {
@@ -57,6 +56,6 @@ new Vue({
   el: '#app',
   router,
   store,
-  components: { App },
+  components: {App},
   template: '<App/>'
 })
