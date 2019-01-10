@@ -27,6 +27,7 @@ axios.get(url).then(function (res) {
   console.log()
 })
 console.log('666')
+
 // Make a request for a user with a given ID
 // axios.get('http://127.0.0.1:5000/dev/?data=test-1')
 //   .then(function (response) {

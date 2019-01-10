@@ -8,9 +8,9 @@ import VuexPersistence from 'vuex-persist'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 // import 'element-ui/lib/theme-chalk/index.css'
-import 'normalize.css'
+// import 'normalize.css'
 
-import '@/assets/css/dashboard.css'
+// import '@/assets/css/dashboard.css'
 
 import 'vue-awesome/icons'
 
